@@ -1,5 +1,10 @@
+import { Button } from 'primereact/button';
+
 export default function Navbar(){
     return(
-        <button>Esse é o layout</button>
+
+        <div className="card flex justify-content-center">
+            <Button label="Submit" />
+        </div>
     )
 }
