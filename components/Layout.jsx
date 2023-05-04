@@ -1,5 +1,5 @@
-import Navbar from "./Navbar"
 import { Menubar } from 'primereact/menubar';
+import { Button } from 'primereact/button'
 
 export default function Layout({children}){
     const items = [
@@ -8,18 +8,13 @@ export default function Layout({children}){
            to:'/'
         },
         {
-           label:'Aulas',
-        },
-        {
-           label:'Métodos',
-        },
-        {
            label:'Sobre',
         },
         {
            label:'Suporte',
         },
     ];
+
     return(
         <>
             <div className="card">
