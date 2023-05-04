@@ -17,7 +17,7 @@ export default function HomePage(){
     const router = useRouter()
     function redirectRegisterPage() {
         router.push('/user/register')
-      }
+    }
 
     return(
         <>
