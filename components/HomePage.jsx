@@ -5,6 +5,7 @@ import style from '@/styles/HomePage.module.css';
 import workImage from '@/public/home/work.png';
 import Image from 'next/image'; 
 import { useRouter } from 'next/router';
+import Link from "next/link";
 
 export default function HomePage(){
     
@@ -44,9 +45,11 @@ export default function HomePage(){
                                     <div>
                                         <p>Esqueceu a senha?</p>
                                     </div>
-                                    <div className='flex align-items-center justify-content-center'>
-                                        <Button label='Entrar' raised className='w-9'/>
-                                    </div>
+                                    <Link href="/home">
+                                        <div className='flex align-items-center justify-content-center'>
+                                            <Button label='Entrar' raised className='w-9'/>
+                                        </div>
+                                    </Link>
                                     <div className='flex align-items-center justify-content-center'>
                                         ou
                                     </div>
