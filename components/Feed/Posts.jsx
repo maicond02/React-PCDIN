@@ -1,5 +1,5 @@
 import { Card } from 'primereact/card';
-
+import Publication from '@/components/Feed/Publication'
 export default function Posts(){
 
     const header = (
@@ -10,7 +10,10 @@ export default function Posts(){
 
     return(
         <>
-            <div className="card">
+            <div>
+                <Publication/>
+            </div>
+            <div className="card mt-2">
                 <Card header={header}>
                     <p className="m-0">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae 

@@ -6,9 +6,9 @@ import workImage from '@/public/home/work.png';
 import Image from 'next/image'; 
 import { useRouter } from 'next/router';
 import Link from "next/link";
+import Layout from "@/components/Layouts/Default"
 
 export default function HomePage(){
-    
     const title = (
         <div>
             

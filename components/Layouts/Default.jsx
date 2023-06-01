@@ -8,10 +8,11 @@ export default function Layout({children, page}){
 
     let items = null;
 
-    function selectLayout(page){
+    function selectLayout(){
+        console.log(page)
         let indexLayout = [
             {
-               label:'Home',
+               label:'Início',
                command: () => router.push('/')
             },
             {
@@ -25,30 +26,35 @@ export default function Layout({children, page}){
         ];
         let defaultLayout = [
             {
-               label:'Home1',
+               label:'Início',
                command: () => router.push('/')
             },
             {
-               label:'Sobre1',
+               label:'Conexões',
                command: () => router.push('/sobre')
             },
             {
-               label:'Suporte1',
+               label:'Vagas',
                command: () => router.push('/suporte')
             },
+            {
+                label:'Mensagens',
+                command: () => router.push('/suporte')
+            },
+            {
+                label:'Notificações',
+                command: () => router.push('/suporte')
+            },
         ];
-        switch(page){
-            case 'index':
-                items = indexLayout
-                console.log('foi')
-                break;
-            default:
-                items = defaultLayout
+        if(page == '/'){
+            items = indexLayout
+            console.log('1')
+        }else{
+            items = defaultLayout
+            console.log('2')
         }
     }
-    console.log(page)
     selectLayout()
-    
 
     return(
         <>
