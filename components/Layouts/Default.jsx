@@ -1,5 +1,7 @@
 import { Menubar } from 'primereact/menubar';
 import { useRouter } from 'next/router';
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
 import styles from '@/components/Layouts/layout.module.css'
 
 export default function Layout({children, page}){
@@ -7,9 +9,10 @@ export default function Layout({children, page}){
     const router = useRouter()
 
     let items = null;
+    let start = null;
+    let classActive = null;
 
     function selectLayout(){
-        console.log(page)
         let indexLayout = [
             {
                label:'Início',
@@ -27,31 +30,41 @@ export default function Layout({children, page}){
         let defaultLayout = [
             {
                label:'Início',
+               icon:'pi pi-home',
                command: () => router.push('/')
             },
             {
                label:'Conexões',
+               icon:'pi pi-users',
                command: () => router.push('/sobre')
             },
             {
                label:'Vagas',
+               icon:'pi pi-briefcase',
                command: () => router.push('/suporte')
             },
             {
                 label:'Mensagens',
+                icon:'pi pi-envelope',
                 command: () => router.push('/suporte')
             },
             {
                 label:'Notificações',
+                icon:'pi pi-bell',
                 command: () => router.push('/suporte')
             },
         ];
         if(page == '/'){
             items = indexLayout
-            console.log('1')
+            classActive = styles.menubar
         }else{
             items = defaultLayout
-            console.log('2')
+            classActive = styles.menubarHome
+            start = (
+                <div>
+                    <InputText placeholder='Pesquisar'/>
+                </div>
+            )
         }
     }
     selectLayout()
@@ -59,7 +72,7 @@ export default function Layout({children, page}){
     return(
         <>
             <div className="card">
-                <Menubar model={items} className={styles.menubar}/>
+                <Menubar start={start} model={items} className={classActive}/>
             </div>
             <div>{children}</div>
         </>

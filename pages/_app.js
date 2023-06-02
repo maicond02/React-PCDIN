@@ -3,6 +3,7 @@ import Layout from '@/components/Layouts/Default'
 import "primereact/resources/themes/bootstrap4-light-blue/theme.css";     
 import "primereact/resources/primereact.min.css";
 import 'primeflex/primeflex.css';
+import 'primeicons/primeicons.css';
 import { useRouter } from 'next/router';
 
 
