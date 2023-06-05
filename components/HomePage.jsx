@@ -2,34 +2,32 @@ import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
 import {Button } from 'primereact/button'
 import style from '@/styles/HomePage.module.css';
-import workImage from '@/public/home/work.png';
+import workImage from '@/public/home/workPCD.gif';
 import Image from 'next/image'; 
 import { useRouter } from 'next/router';
 import Link from "next/link";
 import Layout from "@/components/Layouts/Default"
+import React, { useEffect, useState } from 'react';
 
 export default function HomePage(){
-    const title = (
-        <div>
-            
-        </div>
-    )
 
     const router = useRouter()
     function redirectRegisterPage() {
         router.push('/user/register')
     }
-
+    
     return(
         <>
             <div className="card">
-                <div className={style.card}>
-                    <Card title={title}>
+                <div>
+                    <Card>
                         <div className='grid'>
-                            <div className='col-8'>
-                                <Image src={workImage} alt="Work" width={500} height={500} />
+                            <div className='col-12 md:col-8'>
+                                <div className='flex'>
+                                    <Image src={workImage} alt="Work" width={600} height={600} className={style.image}/>
+                                </div>
                             </div>
-                            <div className='col-4'>
+                            <div className='col-12 md:col-4'>
                                 <div className="flex flex-column gap-2 mb-4">
                                     <h2>Entre na melhor comunidade profissional</h2>
                                 </div>

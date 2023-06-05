@@ -2,9 +2,3 @@
     border: solid 1.5px rgb(227, 227, 227) !important;
     background-color: white !important;
 }
-.menubarHome{
-    border: solid 1.5px rgb(227, 227, 227) !important;
-    background-color: white !important;
-    display: flex !important;
-    justify-content: center !important;
-}

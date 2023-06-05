@@ -1,7 +1,5 @@
 import { Menubar } from 'primereact/menubar';
 import { useRouter } from 'next/router';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
 import styles from '@/components/Layouts/layout.module.css'
 
 export default function Layout({children, page}){
@@ -9,7 +7,6 @@ export default function Layout({children, page}){
     const router = useRouter()
 
     let items = null;
-    let start = null;
     let classActive = null;
 
     function selectLayout(){
@@ -54,17 +51,10 @@ export default function Layout({children, page}){
                 command: () => router.push('/suporte')
             },
         ];
-        if(page == '/'){
+        if(page == '/' || page == '/user/register'){
             items = indexLayout
-            classActive = styles.menubar
         }else{
             items = defaultLayout
-            classActive = styles.menubarHome
-            start = (
-                <div>
-                    <InputText placeholder='Pesquisar'/>
-                </div>
-            )
         }
     }
     selectLayout()
@@ -72,7 +62,7 @@ export default function Layout({children, page}){
     return(
         <>
             <div className="card">
-                <Menubar start={start} model={items} className={classActive}/>
+                <Menubar model={items} className={styles.menubar}/>
             </div>
             <div>{children}</div>
         </>
