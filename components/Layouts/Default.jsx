@@ -28,7 +28,7 @@ export default function Layout({children, page}){
             {
                label:'Início',
                icon:'pi pi-home',
-               command: () => router.push('/')
+               command: () => router.push('/home')
             },
             {
                label:'Conexões',
@@ -49,6 +49,11 @@ export default function Layout({children, page}){
                 label:'Notificações',
                 icon:'pi pi-bell',
                 command: () => router.push('/suporte')
+            },
+            {
+                label:'Usuário',
+                icon:'pi pi-user',
+                command: () => router.push('/profile')
             },
         ];
         if(page == '/' || page == '/user/register'){
