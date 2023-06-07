@@ -15,6 +15,7 @@ export default function List(){
         </div>
     )
 
+
     return(
         <div className='grid'>
             <div className='col-3'>
@@ -36,7 +37,7 @@ export default function List(){
                     </div>
                 </Card>
             </div>
-            <div className='col-7'>
+            <div className='col-9'>
                 <Card title={header}>
                     <div className='flex flex-column'>
                         <div className='mt-4'>
@@ -69,13 +70,6 @@ export default function List(){
                             </div>
                         </div>
                         <Divider />
-                    </div>
-                </Card>
-            </div>
-            <div className='col-2'>
-                <Card title={header}>
-                    <div>
-
                     </div>
                 </Card>
             </div>
