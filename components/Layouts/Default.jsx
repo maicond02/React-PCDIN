@@ -38,7 +38,7 @@ export default function Layout({children, page}){
             {
                label:'Vagas',
                icon:'pi pi-briefcase',
-               command: () => router.push('/suporte')
+               command: () => router.push('/vagas')
             },
             {
                 label:'Mensagens',
