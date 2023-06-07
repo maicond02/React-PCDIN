@@ -1,0 +1,20 @@
+.container{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border: solid 5px white;
+    border-radius: 100px;
+}
+
+.profileImage{
+    width: 100px;
+    height: 100px;
+}
+
+.name{
+    font-weight: bold;
+}
+
+.subTitle{
+    color: rgb(163, 163, 163);
+}
