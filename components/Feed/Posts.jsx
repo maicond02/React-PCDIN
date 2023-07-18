@@ -39,24 +39,21 @@ export default function Posts(){
         {
             title:'Recrutamento.',
             content:'Estamos em busca de programadores web talentosos para se juntarem à nossa equipe.'
+        },
+        {
+            title:'Recrutamento.',
+            content:'Testes sendo realizados'
         }
     ]
 
     function listarPostagens(){
-        let title, conteudo;
-        postagens.forEach(post => {
-            title = post.title
-            conteudo = post.content
-        })
-
-        return (
-            <>
-                <div>{title}</div>
+        return postagens.map((post, index) => (
+            <div key={index}>
+                <div>{post.title}</div>
                 <br/>
-                <div>{conteudo}</div>
-            </>
-
-        )
+                <div>{post.content}</div>
+            </div>
+        ));
     }
 
     return(

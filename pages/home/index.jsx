@@ -7,16 +7,14 @@ export default function Login() {
 
     return (
       <>
-        <div className='flex align-items-center justify-content-center'>
-          <div className='grid'>
-              <div className='hidden md:block col-12 md:col-3'>
+          <div className='grid flex justify-content-center'>
+              <div className='hidden md:block col-12 md:col-2'>
                 <Lateral/>
               </div>
-              <div className='col-12 md:col-7'>
+              <div className='col-12 md:col-8'>
                 <Posts />
               </div>
           </div>
-        </div>
       </>
     )
   }
