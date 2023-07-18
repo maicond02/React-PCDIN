@@ -15,7 +15,7 @@ export default function Posts(){
             </div>
             <div className='flex flex-column mt-3 ml-2'>
                 <div className={styles.creatorPost}>
-                    Maicon Alves
+                    Leonardo Marcondeli
                 </div>
                 <div className={styles.creatorSubPost}>
                     Web developer Sênior
