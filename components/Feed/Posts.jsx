@@ -5,24 +5,11 @@ import { Divider } from 'primereact/divider';
 import profile from '@/public/user/profile.jpg';
 import Image from 'next/image';
 import styles from './default.module.css'
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function Posts(){
+    const postagens = useSelector(state => state.usersData.postagens)
 
-    const header = (
-        <div className='flex'>
-            <div className={styles.container}>
-                <Image src={profile} className={styles.profileImage}/>
-            </div>
-            <div className='flex flex-column mt-3 ml-2'>
-                <div className={styles.creatorPost}>
-                    Leonardo Marcondeli
-                </div>
-                <div className={styles.creatorSubPost}>
-                    Web developer Sênior
-                </div>
-            </div>
-        </div>
-    );
     const footer = (
         <>
             <Divider />
@@ -35,36 +22,43 @@ export default function Posts(){
 
     )
 
-    let postagens = [
-        {
-            title:'Recrutamento.',
-            content:'Estamos em busca de programadores web talentosos para se juntarem à nossa equipe.'
-        },
-        {
-            title:'Recrutamento.',
-            content:'Testes sendo realizados'
-        }
-    ]
-
-    function listarPostagens(){
-        return postagens.map((post, index) => (
-            <div key={index}>
-                <div>{post.title}</div>
-                <br/>
-                <div>{post.content}</div>
-            </div>
-        ));
+    function listPosts(){
+        return postagens.map((post, index) => {
+            let postHeader = (
+                <div className='flex' key={index}>
+                    <div className={styles.container}>
+                        <Image src={post.userPic} className={styles.profileImage} width={200} height={200} alt='profile-pic'/>
+                    </div>
+                    <div className='flex flex-column mt-3 ml-2'>
+                        <div className={styles.creatorPost}>
+                            {post.userName}
+                        </div>
+                        <div className={styles.creatorSubPost}>
+                            {post.userBio}
+                        </div>
+                    </div>
+                </div>
+            );
+            return (
+                <div key={index} className='mt-2'>
+                    <Card title={postHeader} footer={footer}>
+                        <div>{post.title}</div>
+                        <br/>
+                        <div>{post.content}</div>
+                    </Card>
+                </div>
+            );
+        });
     }
+    
 
     return(
         <>
             <div>
                 <Publication/>
             </div>
-            <div className="card mt-2">
-                <Card title={header} footer={footer}>
-                    {listarPostagens()}
-                </Card>
+            <div>
+                {listPosts()}
             </div>
         </>
     )

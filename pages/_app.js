@@ -5,16 +5,22 @@ import "primereact/resources/primereact.min.css";
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 import { useRouter } from 'next/router';
+import store from '../store/index'
+import { Provider } from 'react-redux'
 
 
 export default function App({ Component, pageProps }) {
   const router = useRouter();
   const currentPath = router.pathname;
   return (
-    <Layout page={currentPath}>
-      <div className='mt-2'>
-        <Component {...pageProps} />
-      </div>
-    </Layout>
+    <>
+        <Provider store={store}>
+          <Layout page={currentPath}>
+            <div className='mt-2'>
+              <Component {...pageProps} />
+            </div>
+          </Layout>
+        </Provider>
+    </>
   )
 }

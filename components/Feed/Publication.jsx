@@ -7,6 +7,16 @@ export default function Publication(){
         console.log('oi')
     }
 
+    let publications = [
+        {
+            
+        }
+    ]
+
+    function savePublicationData(){
+
+    }
+
     return(
         <>
             <div className="card">
