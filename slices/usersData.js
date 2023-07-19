@@ -25,8 +25,14 @@ export const counterSlice = createSlice({
         userPic:'https://img.freepik.com/fotos-gratis/homem-cacheado-com-sorriso-largo-mostra-dentes-perfeitos-se-diverte-com-uma-conversa-interessante-tem-cabelos-escuros-e-crespos-e-crespos-contra-uma-parede-branca_273609-17092.jpg?size=626&ext=jpg&ga=GA1.2.1443606447.1679693088&semt=sph',
         title:'Alguma vaga Java backend?',
         content:'Olá rede, estou buscando uma vaga backend Java, sou Pleno.'
-    }
-  ]
+      }
+    ],
+    profileData:[
+      {
+        userName:"Maicon alves",
+        userBio:"Frontend developer",
+      }
+    ]
   },
   reducers: {
     

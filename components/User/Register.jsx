@@ -1,7 +1,7 @@
 import { Card } from 'primereact/card';
 import { InputText } from 'primereact/inputtext';
 import {Button } from 'primereact/button'
-
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
 import Image from 'next/image'; 
@@ -9,10 +9,21 @@ import login from '@/public/user/login.gif'
 
 export default function Register(){
 
+    const [userName, setUserNameValue,] = useState('');
+    const [userPassword, setUserPasswordValue] = useState('');
+
     const router = useRouter()
     function redirectHomePage() {
         router.push('/')
       }
+
+    function registerNewUser(){
+        let userData = {
+            userName:userName,
+            userPassword:userPassword
+        }
+        console.log(userData)
+    }
 
     return(
         <>
@@ -28,12 +39,12 @@ export default function Register(){
                                     <h2>Entre na melhor comunidade profissional</h2>
                                 </div>
                                 <div className="flex flex-column gap-2">
-                                    <label htmlFor="username">E-mail ou username</label>
-                                    <InputText aria-describedby="username-help" />
+                                    <label htmlFor="username">username</label>
+                                    <InputText aria-describedby="username-help" type="text" value={userName} onChange={(e) => setUserNameValue(e.target.value)} />
                                 </div>
                                 <div className="flex flex-column gap-2 mt-4">
                                     <label htmlFor="username">Senha</label>
-                                    <InputText type='password'/>
+                                    <InputText type='password' value={userPassword} onChange={(e) => setUserPasswordValue(e.target.value)}/>
                                 </div>
                                 <div className="flex flex-column gap-2 mt-4">
                                     <div>
@@ -46,7 +57,7 @@ export default function Register(){
                                         ou
                                     </div>
                                     <div className='flex align-items-center justify-content-center'>
-                                        <Button onClick={redirectHomePage} className="w-9" label='Entre em sua conta' severity="info" text raised />
+                                        <Button onClick={registerNewUser} className="w-9" label='Entre em sua conta' severity="info" text raised />
                                     </div>
                                 </div>
                             </div>

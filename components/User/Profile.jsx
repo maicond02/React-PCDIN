@@ -4,7 +4,10 @@ import Image from 'next/image';
 import banner from '@/public/user/banner.jpg';
 import profile from '@/public/user/profile.jpg';
 import { Button } from 'primereact/button';
+import { useSelector, useDispatch } from 'react-redux'
 export default function Profile(){
+
+    const userData = useSelector(state => state.usersData.profileData)
 
     const header = (
         <div>
@@ -33,24 +36,36 @@ export default function Profile(){
         </div>
     )
 
+
+    function getUserLocalStorage(){
+
+    }
+    function loadUserData(){
+        return (
+            <Card title={header}>
+                <div>
+                    <div className='flex flex-column mt-6 ml-6'>
+                        <p className={styles.userData}>
+                            {userData[0].userName}
+                        </p>
+                        <p className={styles.userSubtitle}>
+                        {userData[0].userBio}
+                        </p>
+                        <p className={styles.userLocation}>
+                            Nova Odessa - SP | Brasil
+                        </p>
+                    </div>
+                </div>
+            </Card>
+        )
+    }
+
     return (
         <div className='grid'>
             <div className='col-8'>
-                <Card title={header}>
-                    <div>
-                        <div className='flex flex-column mt-6 ml-6'>
-                            <p className={styles.userData}>
-                                Maicon Alves
-                            </p>
-                            <p className={styles.userSubtitle}>
-                                Web developer Sênior | Javascript | React | React Native | Nodejs
-                            </p>
-                            <p className={styles.userLocation}>
-                                Nova Odessa - SP | Brasil
-                            </p>
-                        </div>
-                    </div>
-                </Card>
+                <div>
+                    {loadUserData()}
+                </div>
                 <div className='mt-2'>
                     <Card title={about}>
                         <div>
