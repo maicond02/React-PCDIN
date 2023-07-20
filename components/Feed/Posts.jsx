@@ -6,17 +6,22 @@ import profile from '@/public/user/profile.jpg';
 import Image from 'next/image';
 import styles from './default.module.css'
 import { useSelector, useDispatch } from 'react-redux'
+import Interactions from './Interactions'
 
 export default function Posts(){
     const postagens = useSelector(state => state.usersData.postagens)
+    const feedData = useSelector(state => state.feedData.value)
 
     const footer = (
         <>
             <Divider />
             <div className='flex'>
                 <Button label="Curtir" icon="pi pi-thumbs-up" outlined />
-                <Button className='ml-2' label="Comentar" icon="pi pi-comments" outlined />
+                <Button onClick={showComments} className='ml-2' label="Comentar" icon="pi pi-comments" outlined />
                 <Button className='ml-2' label="Compartilhar" icon="pi pi-share-alt" outlined />
+            </div>
+            <div className='comments-line'>
+                <Interactions />
             </div>
         </>
 
@@ -51,6 +56,18 @@ export default function Posts(){
         });
     }
     
+    function showComments(index){
+        console.log(index)
+        let commentsLine = document.getElementsByClassName('comments-line');
+
+        for (let i = 0; i < commentsLine.length; i++) {
+          if (commentsLine[i].style.display === 'none') {
+            commentsLine[i].style.display = 'block';
+          } else {
+            commentsLine[i].style.display = 'none';
+          }
+        }
+    }
 
     return(
         <>
