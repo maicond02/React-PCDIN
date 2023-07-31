@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import imagem from '../public/user/profile.jpg'
 export const counterSlice = createSlice({
   name: 'counter',
   initialState: {
