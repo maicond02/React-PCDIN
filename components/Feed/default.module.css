@@ -24,3 +24,11 @@
 .comments{
     display:none;
 }
+
+.countersContainer{
+    margin-bottom: 20px;
+  }
+
+.counters{
+    margin-right: 20px;
+  }

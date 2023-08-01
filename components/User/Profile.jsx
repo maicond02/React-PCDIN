@@ -69,7 +69,7 @@ export default function Profile(){
                 <div className='mt-2'>
                     <Card title={about}>
                         <div>
-                            Engenherio de Software Sênior na empresa PCDIN, atuando com recrutamento com foco em pessoas (PCDS), no meu dia a dia lido com diverso temas, desde programações, até o recrutamento de novos talentos.
+                            {userData[0].userAbout}
                         </div>
                     </Card>
                 </div>

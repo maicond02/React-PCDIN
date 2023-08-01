@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-export const counterSlice = createSlice({
-  name: 'counter',
+export const usersSlice = createSlice({
+  name: 'usersSlice',
   initialState: {
     value: 'names',
     postagens:[
@@ -29,7 +29,8 @@ export const counterSlice = createSlice({
     profileData:[
       {
         userName:"Maicon alves",
-        userBio:"Frontend developer",
+        userBio:"Software Engineer Intern at 3M",
+        userAbout:"Engenherio de Software Sênior na empresa PCDIN, atuando com recrutamento com foco em pessoas (PCDS), no meu dia a dia lido com diverso temas, desde programações, até o recrutamento de novos talentos."
       }
     ]
   },
@@ -37,6 +38,6 @@ export const counterSlice = createSlice({
     
   }
 })
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { increment, decrement, incrementByAmount } = usersSlice.actions
 
-export default counterSlice.reducer
+export default usersSlice.reducer

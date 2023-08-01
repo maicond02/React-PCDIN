@@ -5,16 +5,28 @@ import style from '@/styles/HomePage.module.css';
 import workImage from '@/public/home/workPCD.gif';
 import Image from 'next/image'; 
 import { useRouter } from 'next/router';
-import Link from "next/link";
-import Layout from "@/components/Layouts/Default"
 import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 import MoreContent from './Home/MoreContent';
 
 export default function HomePage(){
 
+    const userData = useSelector(state => state.usersData.profileData)
+
+    const [userName, setUserName] = useState('');
+    const [userPassword, setUserPassword] = useState('');
+
     const router = useRouter()
     function redirectRegisterPage() {
         router.push('/user/register')
+    }
+
+    function userVerifications(){
+        //if(userName == userData[0].userName){
+            router.push('/home')
+        //}else{
+            
+        //}
     }
     
     return(
@@ -35,21 +47,19 @@ export default function HomePage(){
                                     </div>
                                     <div className="flex flex-column gap-2">
                                         <label htmlFor="username">E-mail ou username</label>
-                                        <InputText id="username" aria-describedby="username-help" />
+                                        <InputText value={userName} onChange={(e) => setUserName(e.target.value)} id="username" aria-describedby="username-help" />
                                     </div>
                                     <div className="flex flex-column gap-2 mt-4">
                                         <label htmlFor="username">Senha</label>
-                                        <InputText id="username" aria-describedby="username-help" type='password'/>
+                                        <InputText value={userPassword} onChange={(e) => setUserPassword(e.target.value)} id="username" aria-describedby="username-help" type='password'/>
                                     </div>
                                     <div className="flex flex-column gap-2 mt-4">
                                         <div>
                                             <p>Esqueceu a senha?</p>
                                         </div>
-                                        <Link href="/home">
                                             <div className='flex align-items-center justify-content-center'>
-                                                <Button label='Entrar' raised className='w-9'/>
+                                                <Button onClick={userVerifications} label='Entrar' raised className='w-9'/>
                                             </div>
-                                        </Link>
                                         <div className='flex align-items-center justify-content-center'>
                                             ou
                                         </div>

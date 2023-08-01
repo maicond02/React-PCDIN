@@ -6,9 +6,11 @@ import Image from 'next/image';
 import styles from './default.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import Interactions from './Interactions';
+import { useState } from 'react';
 
 export default function Posts(){
     const postagens = useSelector(state => state.usersData.postagens)
+    let [likeCounter, setLikeCounter] = useState(0);
     function listPosts(){
         return postagens.map((post, index) => {
             let postHeader = (
@@ -29,8 +31,15 @@ export default function Posts(){
             let postFooter =(
                 <>
                     <Divider />
+                    <div>
+                        <div className={styles.countersContainer}>
+                            <span className={styles.counters}>Curtidas: {likeCounter}</span>
+                            <span className={styles.counters}>Comentarios: {likeCounter}</span>
+                            <span>Compartilhamentos: {likeCounter}</span>
+                        </div>
+                    </div>
                     <div className='flex'>
-                        <Button label="Curtir" icon="pi pi-thumbs-up" outlined />
+                        <Button onClick={() => showLikes()} label="Curtir" icon="pi pi-thumbs-up" outlined />
                         <Button onClick={() => showComments(index)} className='ml-2' label="Comentar" icon="pi pi-comments" outlined />
                         <Button className='ml-2' label="Compartilhar" icon="pi pi-share-alt" outlined />
                     </div>
@@ -58,6 +67,10 @@ export default function Posts(){
         }else{
             commentsLine[index].style.display = 'none';
         }
+    }
+
+    function showLikes(){
+        setLikeCounter(likeCounter + 1);
     }
 
     return(
