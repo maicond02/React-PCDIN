@@ -35,12 +35,12 @@ export default function HomePage(){
                 <div>
                     <Card>
                         <div className='grid'>
-                            <div className='flex justify-content-center col-12 md:col-6'>
+                            <div className='flex justify-content-center col-12 md:col-8'>
                                 <div className='flex'>
-                                    <Image src={workImage} alt="Work" width={600} height={600} className={style.image}/>
+                                    <Image src={workImage} alt="Work" className={style.image}/>
                                 </div>
                             </div>
-                            <div className='flex justify-content-center col-12 md:col-6'>
+                            <div className='flex justify-content-center col-12 md:col-4'>
                                 <div>
                                     <div className="flex flex-column gap-2 mb-4">
                                         <h2>Entre na melhor comunidade profissional</h2>

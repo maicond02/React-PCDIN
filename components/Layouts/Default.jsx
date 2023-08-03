@@ -13,14 +13,17 @@ export default function Layout({children, page}){
         let indexLayout = [
             {
                label:'Início',
+               icon:'pi pi-fw pi-home',
                command: () => router.push('/')
             },
             {
                label:'Sobre',
+               icon:'pi pi-fw pi-info-circle',
                command: () => router.push('/sobre')
             },
             {
                label:'Suporte',
+               icon:'pi pi-fw pi-wrench',
                command: () => router.push('/suporte')
             },
         ];
