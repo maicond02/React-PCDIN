@@ -36,7 +36,7 @@ export default function Layout({children, page}){
             {
                label:'Conexões',
                icon:'pi pi-users',
-               command: () => router.push('/sobre')
+               command: () => router.push('/connections')
             },
             {
                label:'Vagas',
