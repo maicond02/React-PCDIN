@@ -27,7 +27,26 @@ export default function Lateral(){
                         </div>
                         <Divider />
                     </div>
+                    <div className='flex flex-column'>
+                        <span>Vizualizações no perfil: <span className='text-primary'>10</span></span>
+                        <span>Vizualizações nas publicações: <span className='text-primary'>200</span></span>
+                    </div>
                 </Card>
+                <div className='mt-2'>
+                    <Card>
+                        <div className='flex flex-column'>
+                            <div className='flex flex-column'>
+                                <span className='text-primary'>Grupos</span>
+                                <span className='mt-2 text-primary'>Eventos</span>
+                                <span className='mt-2 text-primary'>Hashtags</span>
+                            </div>
+                            <Divider />
+                            <div>
+                                <span>Descubra mais</span>
+                            </div>
+                        </div>
+                    </Card>
+                </div>
             </div>
         </>
     )
