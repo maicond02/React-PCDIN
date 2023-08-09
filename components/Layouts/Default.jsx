@@ -19,7 +19,7 @@ export default function Layout({children, page}){
             {
                label:'Sobre',
                icon:'pi pi-fw pi-info-circle',
-               command: () => router.push('/sobre')
+               command: () => router.push('/about')
             },
             {
                label:'Suporte',
@@ -59,7 +59,7 @@ export default function Layout({children, page}){
                 command: () => router.push('/profile')
             },
         ];
-        if(page == '/' || page == '/user/register'){
+        if(page == '/' || page == '/user/register' || page=='/about'){
             items = indexLayout
         }else{
             items = defaultLayout

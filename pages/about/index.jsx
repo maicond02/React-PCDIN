@@ -1,5 +1,5 @@
-import CardAbout from '../../components/CardAbout/Card'
-import SpliterAbout from '../../components/SplitterAbout/Spliter'
+import CardAbout from '../../components/About/Card'
+import SpliterAbout from '../../components/About/Spliter'
 
 export default function pageAbout (){
     return(
