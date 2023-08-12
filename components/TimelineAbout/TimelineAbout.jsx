@@ -25,7 +25,7 @@ export default function TemplateDemo() {
     const customizedContent = (item) => {
         return (
             <Card title={item.status} subTitle={item.date}>
-                {item.image && <img src={curiosity} alt={item.name} width={200} className="shadow-1" />}
+                {item.image && <img src={curiosity} alt={item.name} width={250} height={150} className="shadow-1" />}
                     <p>{item.content}</p>
                 <Button label="Read more" className="p-button-text"></Button>
             </Card>
