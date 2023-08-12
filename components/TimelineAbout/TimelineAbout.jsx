@@ -3,6 +3,7 @@ import React from 'react';
 import { Timeline } from 'primereact/timeline';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
+import curiosity from '@/public/about/curiosity.Gif'
 
 
 export default function TemplateDemo() {
@@ -24,8 +25,8 @@ export default function TemplateDemo() {
     const customizedContent = (item) => {
         return (
             <Card title={item.status} subTitle={item.date}>
-                { item.image && <img src={`https://primefaces.org/cdn/primereact/images/product/${item.image}`} alt={item.name} width={200} className="shadow-1" />}
-                <p>{item.content}</p>
+                {item.image && <img src={curiosity} alt={item.name} width={200} className="shadow-1" />}
+                    <p>{item.content}</p>
                 <Button label="Read more" className="p-button-text"></Button>
             </Card>
         );
