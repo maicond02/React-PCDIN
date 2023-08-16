@@ -46,7 +46,7 @@ export default function Layout({children, page}){
             {
                 label:'Mensagens',
                 icon:'pi pi-envelope',
-                command: () => router.push('/suporte')
+                command: () => router.push('/messages')
             },
             {
                 label:'Notificações',
