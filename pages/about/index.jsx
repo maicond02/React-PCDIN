@@ -1,5 +1,4 @@
 import CardAbout from '../../components/About/Card'
-import SpliterAbout from '../../components/About/Spliter'
 import TimelineAbout from '../../components/TimelineAbout/TimelineAbout'
 import FieldsetAbout from '../../components/FieldsetAbout/FieldsetAbout'
 import curiosity from '../../public/about/curiosity.gif'

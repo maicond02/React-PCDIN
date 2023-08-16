@@ -5,6 +5,7 @@ import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import curiosity from '../../public/about/curiosity.gif'
 import Image from 'next/image';
+import Scope from '../../public/about/Scope.gif'
 
 
 export default function TemplateDemo() {
@@ -26,7 +27,7 @@ export default function TemplateDemo() {
     const customizedContent = (item) => {
         return (
             <Card title={item.status} subTitle={item.date}>
-                {item.image && <Image src={curiosity} alt="teste" width={250} height={150}/>}
+                {item.image && <Image src={Scope} alt="teste" width={180} height={150}/>}
                     <p>{item.content}</p>
                 <Button label="Read more" className="p-button-text"></Button>
              </Card>
