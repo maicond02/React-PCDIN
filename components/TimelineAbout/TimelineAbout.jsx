@@ -1,4 +1,3 @@
-
 import React from 'react'; 
 import { Timeline } from 'primereact/timeline';
 import { Card } from 'primereact/card';
@@ -12,7 +11,7 @@ export default function TemplateDemo() {
         const events = [
         { status: 'Objetivo', content: 'O objetivo deste projeto é construir um modelo unificado de trabalho, o PCD-IN. Visando compreender e auxiliar o acesso de PcD ao mercado de trabalho, unificando as oportunidades de emprego fornecidas especialmente para deficientes auditivos  visuais, físicos, mentais/intelectuais ou com limitações múltiplas, e apresentar tais oportunidades de trabalho e desenvolvimento profissional de maneira intuitiva e organizada.', date: '15/10/2020 10:30', icon: 'pi pi-bolt', color: '#007bff', image: 'game-controller.jpg' },
         { status: 'Metodos', content: 'Visando compreender e auxiliar o acesso de PcD ao mercado de trabalho, tendo como foco a criação de uma plataforma em formato de site web (World Wide Web) e aplicativo mobile, que unifica as oportunidades de emprego fornecidas especialmente para PCDs', date: '15/10/2020 14:00', icon: 'pi pi-compass', color: '#007bff' },
-        { status: 'Relatar erro', content: 'teste3', date: '15/10/2020 16:15', icon: 'pi pi-megaphone', color: '#007bff' },
+        { status: 'Relatar erro', content: 'Para relatar um erro para nosso time, Clicke aqui', date: '15/10/2020 16:15', icon: 'pi pi-megaphone', color: '#007bff' },
         { status: 'Contato', content: 'teste4', date: '16/10/2020 10:00', icon: 'pi pi-comments', color: '#007bff' }
     ];
 
