@@ -10,12 +10,10 @@ export default function pageAbout (){
             <div className='flex align-items-center justify-content-center mt-2'> 
                 <Image  src={curiosity} alt="teste" width={600} height={500}/>
             </div>
-            <div className='mt-2'>
+            <div className='mt-5'>
                 <TimelineAbout/>
             </div>
-            <div className='mt-2'>
-                <FieldsetAbout/>
-            </div>
+            <br></br>
         </>
     )
 }

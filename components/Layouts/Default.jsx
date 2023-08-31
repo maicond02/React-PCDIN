@@ -59,7 +59,7 @@ export default function Layout({children, page}){
                 command: () => router.push('/profile')
             },
         ];
-        if(page == '/' || page == '/user/register' || page=='/about'){
+        if(page == '/' || page == '/user/register' || page=='/about' || page=='/suporte' ){
             items = indexLayout
         }else{
             items = defaultLayout
